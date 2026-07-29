@@ -1,0 +1,325 @@
+:root {
+  --text: #333333;
+  --muted: #777777;
+  --link: #4582ec;
+  --link-hover: #134fb8;
+  --rule: #dddddd;
+  --page-width: 1170px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  margin: 0;
+  padding-top: 65px;
+  background: #ffffff;
+  color: var(--text);
+  font: 16px/1.42857143 Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-inner {
+  width: min(calc(100% - 30px), var(--page-width));
+  height: 65px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.site-nav a {
+  display: flex;
+  align-items: center;
+  color: var(--link);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.name {
+  flex: 0 0 auto;
+  padding: 0 15px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.primary-nav,
+.profile-nav {
+  display: flex;
+  align-items: stretch;
+}
+
+.primary-nav a,
+.profile-nav a {
+  padding: 0 15px;
+  border: 1px solid transparent;
+  font-size: 16px;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus,
+.profile-nav a:hover,
+.profile-nav a:focus {
+  border-color: var(--rule);
+}
+
+.profile-nav {
+  margin-left: auto;
+}
+
+.profile-nav a {
+  font-size: 13px;
+}
+
+.container {
+  width: min(calc(100% - 30px), var(--page-width));
+  margin: 0 auto;
+}
+
+.intro {
+  min-height: 300px;
+  padding: 66px 0 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.intro-copy {
+  padding-right: 15px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1 {
+  margin: 22px 0 11px;
+  font-size: 64px;
+}
+
+.lead {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font: 300 24px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+  margin: 0 0 11px;
+}
+
+.portrait {
+  margin: 0;
+  justify-self: end;
+  text-align: center;
+}
+
+.portrait img {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+}
+
+.content-section {
+  margin-top: 128px;
+}
+
+.content-section > h2 {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 64px;
+}
+
+.section-content {
+  width: 66.66666667%;
+  padding-top: 22px;
+}
+
+h3 {
+  margin: 34px 0 11px;
+  font-size: 34px;
+}
+
+ul {
+  margin: 0 0 11px;
+  padding-left: 40px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.publications li {
+  margin-bottom: 11px;
+}
+
+.reviewer-journals {
+  columns: 2;
+  column-gap: 38px;
+  margin-top: 11px;
+  padding-left: 24px;
+}
+
+.reviewer-journals li {
+  break-inside: avoid;
+}
+
+footer {
+  margin-top: 80px;
+  padding: 24px 0 56px;
+  border-top: 1px solid var(--rule);
+  color: #999999;
+  font-size: 12px;
+}
+
+@media (max-width: 991px) {
+  .container,
+  .nav-inner {
+    width: min(calc(100% - 30px), 750px);
+  }
+
+  .intro {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  }
+
+  .section-content {
+    width: 83.33333333%;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+
+  body {
+    padding-top: 98px;
+  }
+
+  .site-nav {
+    height: 98px;
+  }
+
+  .nav-inner {
+    height: 98px;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
+  .name {
+    height: 48px;
+  }
+
+  .profile-nav {
+    height: 48px;
+  }
+
+  .primary-nav {
+    order: 3;
+    width: 100%;
+    height: 38px;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .primary-nav a {
+    padding: 0 20px 0 0;
+    border: 0;
+    font-size: 14px;
+  }
+
+  .profile-nav a {
+    padding: 0 0 0 14px;
+    border: 0;
+    font-size: 12px;
+  }
+
+  .intro {
+    padding-top: 42px;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .intro-copy {
+    padding-right: 0;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .lead {
+    font-size: 21px;
+  }
+
+  .portrait {
+    justify-self: center;
+  }
+
+  .portrait img {
+    width: min(100%, 460px);
+  }
+
+  .content-section {
+    margin-top: 92px;
+  }
+
+  .content-section > h2 {
+    font-size: 46px;
+  }
+
+  .section-content {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 29px;
+  }
+
+  .reviewer-journals {
+    columns: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 44px;
+  }
+
+  .content-section > h2 {
+    font-size: 40px;
+  }
+}
